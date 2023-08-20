@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small:26;
+  --side-big:36;
+  --depth: 4000px;
+  --transition: .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+	font-family: raleway_c;
+	src: url(/fonts/raleway-v22-cyrillic-300.woff2);
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: raleway_c;
+	src: url(/fonts/raleway-v22-cyrillic-100.woff2);
+	font-weight: 100;
+}
+
+body {
+  background-color: black;
+  color: #fff;
+  font-size: calc(var(--index) * .8);
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition) ,opacity .75s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+  width: min-content;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+  color:#A10035 ;
+  
+} 
+
+.frame h2 {
+  text-align: center;
+  font-size: calc(var(--index) * 3.3 );
+}
+
+.frame-media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
+}
+
+.frame-media-left {
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame-media-right {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame_bg {
+  background-color: rgb(0 0 0 / .87);
+}
+
+video.frame-media {
+  width: calc(var(--index) * var(--side-big));
+  height: calc(var(--index) * var(--side-small));
+
+}
+
+video.frame-media_right {
+  left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+video.frame-media_left {
+  right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+.text-right > * {
+    position: relative;
+    left: 20vw;
+
+}
+
+.text {
+  color: #A10035;
+}
+
+.text-left > * {
+  position: relative;
+  right: 20vw;
+
+}
+
+.frame h3 {
+  font-size: calc(var(--index) * 3);
+}
+
+.frame p {
+  max-width: 30vw;
+  margin-top: 5vh;
+}
+
+.btn-79,
+.btn-79 *,
+.btn-79 :after,
+.btn-79 :before,
+.btn-79:after,
+.btn-79:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-79 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #A10035;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#fff #000);
+  padding: 0;
+}
+.btn-79:disabled {
+  cursor: default;
+}
+.btn-79:-moz-focusring {
+  outline: auto;
+}
+.btn-79 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-79 [hidden] {
+  display: none;
+}
+.btn-79 {
+  --height: 80px;
+  background: none;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  height: var(--height);
+  -webkit-mask-image: none;
+  padding: 0 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-79 span {
+  font-weight: 900;
+  mix-blend-mode: difference;
+}
+.btn-79:before {
+  background: #A10035;
+  border-radius: 20px;
+  content: "";
+  height: calc(var(--height) / 1.7);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s;
+  width: calc(var(--height) / 1.7);
+}
+.btn-79:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+.btn-79  {
+  position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+	cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+	transition: .25s ease;
+  
+}
+
+
